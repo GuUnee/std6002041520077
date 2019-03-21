@@ -8,8 +8,7 @@ class App extends React.Component{
     render(){
         return(
             <View>
-                <Text> hello pairat 
-                </Text>
+                <Text> hello pairat std6002041520077 </Text>
             </View>
         );
     }
