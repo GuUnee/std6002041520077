@@ -11,15 +11,16 @@ class Header extends Component {
             <View style={styles.Header}>
                 <Text style={styles.text}>{this.props.title}</Text>
             </View>
-        )
+        );
     }
 }
 
 //style
 const styles={
     Header: {
-        padding: 50,
-        alignItems: 'center'
+        padding: 20,
+        alignItems: 'center',
+        backgroundColor: "#66ff99"
     },
     text:{
         fontSize: 35,
