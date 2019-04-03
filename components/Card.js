@@ -1,52 +1,58 @@
-import React, { Component } from 'react';
-import { View, Text, Image,Button } from 'react-native';
+import React, {Component} from 'react';
+import {View,Text,Image,Button,Dimensions} from 'react-native';
 import CardSection from './CardSection';
 
 class Card extends Component{
     render(){
         return(
-            <View>
-                <CardSection>
-                    <Image 
-                        style={{width:50, height:50}}
-                        source={{uri:'http://icons.iconarchive.com/icons/paomedia/small-n-flat/512/user-male-icon.png'}}
-                    />
-                    <Text>Why not?</Text>
-                </CardSection>
+        <View>
+            <CardSection>
+                <View>
+                    <View style={{margin:5,marginTop:15,flexDirection: 'row'}}>
+                            <View style={{ width: 100, height: 100 }}>
+                                <Image 
+                                    source={{ uri: 'https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwi_nLOFz7PhAhXP63MBHVHCBkIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.youtube.com%2Fchannel%2FUCK-JOh6HwRaA-0_g5NRQExg&psig=AOvVaw3kIiyC69wiqEKogfUUkRLl&ust=1554370336387351' }} 
+                                    style={{ width: 100, height: 100 }}
+                                />
+                            </View>
+                            <View style={{margin:10}}>
+                                <Text style={styles.text}>  PLAYERUNKNOWN’S BATTLEGROUNDS</Text>
+                                <Text style={styles.text}>  Boy Minoru</Text></View>
+                    </View>
+                </View>
+            </CardSection>
 
-                <CardSection>
-                    <View style={styles.button}>
-                        <Image 
-                                style={{width:400, height:400}}
-                                source={{uri:'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80'}}
-                        />
-                    </View>
-                </CardSection>  
-                 
-                <CardSection>
-                    <View style={styles.button}>
-                            <Button
-                                title="Buy"
-                            />
-                    </View>
-                </CardSection>
+            <CardSection>
+            <View style={styles.button}>
+                <Image 
+                    source={{ uri: 'https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiX4tH4zrPhAhWc7XMBHbc7BboQjRx6BAgBEAU&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DETbQy11SPW8&psig=AOvVaw3kIiyC69wiqEKogfUUkRLl&ust=1554370336387351' }} 
+                    style={{ width: 400, height: 350}}/>
             </View>
+            </CardSection>
+
+            <CardSection >
+                <View style={styles.button}>
+                    <View style={{width: 100 }}>
+                        <Button 
+                            title="BUY NOWW" 
+                            color= "#910606" />
+                    </View>
+                </View>
+            </CardSection>
+        </View>
         );
     }
 }
-const
-    styles={
-        Button:{
-            justifyContent:'center', 
-            alginItems:'center',
-            marginTop:10
-        },
-        Image:{
-            justifyContent:'center', 
-            alginItems:'center',
-        }
+
+const styles = {
+    button : {
+        alignItems : 'center',
+        justifyContent : 'center',
+        margin : 10
+
+    },
+    text : {
+        fontSize:18
     }
-//stype
-
-
+}
 export default Card;
