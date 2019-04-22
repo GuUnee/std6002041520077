@@ -1,10 +1,13 @@
 // import libray
 import React, { Component } from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, Text, ActivityIndicator, Button } from 'react-native';
 import axios from 'axios';
 
 // write component 
 class About extends Component {
+    static navigationOptions = {
+        title: 'Profile'
+    }
     constructor() {
         super();
         this.state ={
@@ -18,7 +21,7 @@ class About extends Component {
         const config = {
             headers: {
                 accept: '*/*',
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1Y2FlZjUzMjBhYTc3ZjQwYzQyZjA1NDEiLCJpYXQiOjE1NTQ5Njk5ODd9.JXglCjl_-y321bzS_-rd1Qji-O4g8T1VXP65r-RN9M4'
+                Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1Y2FlZjUzMjBhYTc3ZjQwYzQyZjA1NDEiLCJpYXQiOjE1NTU5MTk5Njh9.6Ut4Z0oV1cFRdD36oK7PQ_mdeSWw3TYEzWh60WlYrAI'
             }
         }
 
@@ -37,14 +40,21 @@ class About extends Component {
 
     render() {
         if (this.state.name == '') {
-            <View>
+            return <View>
                 <ActivityIndicator size="large" color="#0000ff" />
             </View>
         }
         return (
             <View>
                 <Text style={styles.text}>Name: {this.state.name}</Text>
-                <Text style={styles.text}>Email: {this.state.email}</Text>
+                <Text style={styles.lastText}>Email: {this.state.email}</Text>
+                
+                <Button 
+                    title="Back"
+                    onPress={() =>
+                        this.props.navigation.push('Login')}
+                />
+                
             </View>
         );
     }
@@ -53,6 +63,10 @@ class About extends Component {
 const styles = {
     text: {
         fontSize: 30
+    },
+    lastText: {
+        fontSize: 30,
+        marginBottom: 20
     }
 }
 
